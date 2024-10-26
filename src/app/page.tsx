@@ -7,14 +7,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { createRef, HTMLAttributes, memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { BiDownload } from "react-icons/bi";
-import { BsGithub, BsSpeedometer2 } from "react-icons/bs";
+import { BsGithub, BsLaptopFill, BsSpeedometer2 } from "react-icons/bs";
 import { CiCircleList, CiGlobe } from "react-icons/ci";
-import { FaAngleLeft, FaAngleRight, FaLinkedinIn, FaRegSun } from "react-icons/fa6";
+import { FaAngleLeft, FaAngleRight, FaCodeBranch, FaLaptopCode, FaLinkedinIn, FaPlus, FaRegSun } from "react-icons/fa6";
 import { GrStreetView } from "react-icons/gr";
-import { IoMailUnreadOutline } from "react-icons/io5";
+import { IoCodeSlash, IoMailUnreadOutline } from "react-icons/io5";
 import { LuServerCrash } from "react-icons/lu";
-import { MdOutlineChecklist, MdOutlineNewReleases } from "react-icons/md";
-import { PiGithubLogoLight } from "react-icons/pi";
+import { MdDesktopMac, MdOutlineChecklist, MdOutlineDesktopMac, MdOutlineNewReleases, MdScreenshotMonitor } from "react-icons/md";
+import { PiGithubLogoLight, PiLaptopDuotone } from "react-icons/pi";
 
 export default function Home() {
 	const fasterRef = useRef(null);
@@ -152,6 +152,85 @@ export default function Home() {
 						</button>
 					</div>
 				</div>
+			</section>
+
+			<section id="about" className="pt-28 flex flex-col items-center">
+				<h2
+					className="text-5xl font-semibold text-center leading-[4rem]"
+					aria-label="En hurtigere måde at gøre tingene på."
+				>
+					Gør hjemmesiden
+					<br />
+					<span className="inline-flex items-center gap-3">
+						til 
+						<span className="overflow-hidden p-2 inline-flex items-center rounded-full transition-all duration-300 w-min" style={{
+							backgroundColor: "#146eff" + (75).toString(16),
+						}}>
+							<Chip
+								chip={{
+									color: "#146eff",
+									icon: BsSpeedometer2,
+									text: "din\u00A0egen",
+									textWidth: 0,
+									indexOfNext: 0,
+								}}
+								shouldAnimateIn={isFasterChipInView && !prefersReducedMotion}
+								shouldAnimateOut={false}
+								ref={fasterRef}
+							/>
+						</span>
+						
+					</span>
+				</h2>
+				<ul className="mt-12 grid grid-cols-12 w-full gap-16 max-w-[1400px] px-20 mx-auto">
+					<button className="text-start col-span-7 bg-gray-200 rounded-3xl p-8 group relative overflow-hidden">
+						<MdOutlineDesktopMac
+							className="absolute -bottom-4 -left-4 size-[450px] opacity-10 rotate-[45deg] -translate-x-[70px] translate-y-[70px]"
+						/>
+
+						<span className="uppercase font-bold text-blue-700">
+							Hjemmesider/Web-Apps
+						</span>
+						<h3 className="font-bold text-3xl">
+							Web-hotel? Det klarer vi.
+						</h3>
+
+						<p className="my-4 text-xl">
+							Få en professionel og pålidelig hjemmeside, skræddersyet til dine behov.
+							Vi hjælper dig hele vejen, lige fra opsætning til vedligeholdelse, så du
+							kan fokusere på din forretning. Vi tilbyder uforpligtende konsultationer på op til
+							15 minutter - lad os tage en snak om dit næste skridt.
+						</p>
+
+						<button
+							className={`mt-44 p-5 border-2 border-blue-600 group-hover:scale-110 group-hover:bg-blue-600 transition-all duration-300 rounded-full float-right`}
+						>
+							<FaAngleRight className="text-blue-600 size-5 group-hover:text-white" />
+						</button>
+					</button>
+
+					<button className="text-start col-span-5 border-4 border-gray-300 rounded-3xl h-fit p-8 group">
+						<span className="uppercase font-bold text-blue-700">
+							MOBIL APPLIKATIONER
+						</span>
+						<h3 className="font-bold text-3xl">
+							Mobil-løsninger? Vi har dig dækket.
+						</h3>
+
+						<p className="my-4 text-xl">
+						Skal din virksomhed være til stede på mobilen? Vi udvikler mobilapps, der gør
+						dine tjenester nemt tilgængelige for dine kunder, uanset hvor de er. Fra design til
+						lancering står vi klar til at hjælpe dig. Book en uforpligtende 15-minutters konsultation, og
+						lad os tale om, hvordan vi kan bringe din idé til live på mobilen.
+						</p>
+
+						<button
+							className={`mt-8 p-5 border-2 border-blue-600 group-hover:scale-110 group-hover:bg-blue-600 transition-all duration-300 rounded-full float-right`}
+						>
+							<FaAngleRight className="text-blue-600 size-5 group-hover:text-white" />
+						</button>
+					</button>
+				</ul>
 			</section>
 
 			<section id="submit" className="w-full overflow-hidden py-40">

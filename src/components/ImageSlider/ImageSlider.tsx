@@ -30,7 +30,7 @@ export const SliderElement = (props: ElementProps) => {
 					props.setSelected(props.id)
 			}}
 		>
-			<div className={`overflow-hidden border rounded-md group ${props.dark ? "bg-black" : "bg-white"}`}>
+			<div className={`overflow-hidden rounded-md group ${props.dark ? "bg-black" : "bg-white border"}`}>
 				<Image
 					src={props.backgroundUrl}
 					width={1901}
@@ -48,7 +48,7 @@ export const SliderElement = (props: ElementProps) => {
 							href={redirect.href}
 							target="_blank"
 
-							className={`rounded-full p-2 ${props.dark ? "bg-blue-900/25 hover:bg-blue-900/45" : "bg-blue-300/25 hover:bg-blue-300/45"}`}
+							className={`border border-blue-600 rounded-full p-2 ${props.dark ? "bg-blue-900/25 hover:bg-blue-900/45" : "bg-blue-300/35 hover:bg-blue-300/55"}`}
 						>
 							<redirect.icon className="size-8 text-blue-600" />
 						</Link>
@@ -56,8 +56,12 @@ export const SliderElement = (props: ElementProps) => {
 				</div> 
 			</div>
 
-			<div className="absolute top-5 left-1/2 -translate-x-1/2 bg-white px-8 pb-1 rounded-b-lg border-b border-l border-r">
-				<span className="font-normal uppercase">
+			<div className={`absolute top-0 left-1/2 -translate-x-1/2 bg-white px-8 py-1 rounded-b-lg ${!props.dark && "border-b border-l border-r"}`}>
+				<span className="font-normal uppercase text-center block">
+					<strong className="text-lg">
+						Referenceprojekt
+					</strong>
+					<br />
 					{props.title}
 				</span>
 			</div>

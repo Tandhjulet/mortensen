@@ -9,10 +9,13 @@ export default function Footer() {
             <div className="border-t border-gray-300 my-10" />
             <div className="grid grid-cols-8 px-4">
                 <div className="col-start-1 flex flex-col col-span-2 gap-2 font-normal text-nowrap">
-                    <a href="/" className="text-gray-800 text-sm">
+                    <a href="/" className="text-gray-800 text-sm w-fit">
 						Mads Bech
 						<br />
 						<strong className="font-black text-2xl">Mortensen</strong>
+						<span className="align-top font-bold">
+							&copy;
+						</span>
 					</a>
                     <div className="grow" />
 
