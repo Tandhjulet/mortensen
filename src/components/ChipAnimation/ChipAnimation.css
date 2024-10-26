@@ -1,0 +1,46 @@
+.chip-label {
+    animation-delay: 0s, 2s;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.chip-char {
+    animation-name: charBounceSlide;
+    animation-duration: 700ms;
+    animation-fill-mode: both;
+}
+
+.animated {
+    display: inline-flex;
+    align-items: center;
+    animation-name: _, labelSlideOut;
+}
+
+.unanimated {
+    display: inline-flex;
+    align-items: center;
+}
+
+@keyframes labelSlideOut {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-110%);
+    }
+}
+
+@keyframes charBounceSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    70% {
+        opacity: 1;
+        transform: translateY(-10%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
