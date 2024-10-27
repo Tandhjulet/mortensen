@@ -1,6 +1,7 @@
 "use client";
 
 import ChipAnimation, { Chip } from "@/components/ChipAnimation/ChipAnimation";
+import Estimator from "@/components/Estimator/Estimator";
 import ImageSlider, { SliderElement } from "@/components/ImageSlider/ImageSlider";
 import { motion, MotionProps, useInView, useReducedMotion } from "framer-motion";
 import Image from "next/image";
@@ -204,7 +205,7 @@ export default function Home() {
 						</div>
 
 						<MdOutlineDesktopMac
-							className="absolute -bottom-4 -left-4 size-[450px] text-gray-300 rotate-[45deg] -translate-x-[70px] translate-y-[70px] -z-10"
+							className="absolute -bottom-5 -left-4 size-[450px] text-gray-300 rotate-[45deg] -translate-x-[70px] translate-y-[70px] -z-10"
 						/>
 					</button>
 
@@ -232,11 +233,20 @@ export default function Home() {
 				</ul>
 			</section>
 
-			<section id="submit" className="w-full overflow-hidden py-40">
-				<div className="mx-auto w-fit bg-white">
-					<h2 className="mb-10 text-center text-5xl font-semibold text-gray-900">Stadig interesseret?</h2>
+			<section id="submit" className="w-full overflow-hidden pt-40">
+				<div className="mx-auto w-fit bg-white pb-16">
+					<h2 className="text-center text-5xl font-semibold text-gray-900">
+						Stadig interesseret?
+					</h2>
+					<span className="block text-center my-1 text-lg">
+						Få et gratis, uforpligtende, prisestimat
+					</span>
 
-					<button className="p-5 bg-blue-600/20 hover:bg-blue-600/35 inline-flex gap-3 items-center rounded-full mx-4">
+					<Estimator />
+				</div>
+
+				<div className="mx-auto my-28 w-fit">
+					<button className="mx-4 p-5 bg-blue-600/20 hover:bg-blue-600/35 inline-flex gap-3 items-center rounded-full">
 						<GrStreetView className="size-6" />
 
 						<span>
@@ -244,7 +254,7 @@ export default function Home() {
 						</span>
 					</button>
 
-					<button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white inline-flex gap-4 items-center rounded-full mx-4">
+					<button className="mx-4 px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white inline-flex gap-4 items-center rounded-full">
 						<MdOutlineChecklist className="size-6" />
 
 						<span className="text-left text-xs text-gray-200">
