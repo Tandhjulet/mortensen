@@ -10,7 +10,7 @@ import { createRef, HTMLAttributes, memo, useCallback, useEffect, useMemo, useRe
 import { BiDownload } from "react-icons/bi";
 import { BsGithub, BsLaptopFill, BsSpeedometer2 } from "react-icons/bs";
 import { CiCircleList, CiGlobe } from "react-icons/ci";
-import { FaAngleLeft, FaAngleRight, FaCodeBranch, FaKey, FaLaptopCode, FaLinkedinIn, FaPlus, FaRegSun } from "react-icons/fa6";
+import { FaAngleLeft, FaAngleRight, FaCodeBranch, FaDollarSign, FaKey, FaLaptopCode, FaLinkedinIn, FaPlus, FaRegSun } from "react-icons/fa6";
 import { GrStreetView } from "react-icons/gr";
 import { IoCodeSlash, IoMailUnreadOutline } from "react-icons/io5";
 import { LuKeyRound, LuServerCrash } from "react-icons/lu";
@@ -48,6 +48,7 @@ export default function Home() {
 					<Link
 						className="bg-gray-100 hover:text-blue-600 rounded-full p-2"
 						href={"mailto:madsbechmortensen@hotmail.dk"}
+						target="_blank"
 					>
 						<IoMailUnreadOutline className="size-6" />
 					</Link>
@@ -72,15 +73,27 @@ export default function Home() {
 				</h1>
 
 				<div className="mt-10">
-					<button className="p-5 bg-blue-600/20 hover:bg-blue-600/35 inline-flex gap-3 items-center rounded-full mx-4">
-						<GrStreetView className="size-6" />
+					<button
+						className="p-5 bg-blue-600/20 hover:bg-blue-600/35 inline-flex gap-3 items-center rounded-full mx-4"
+						onClick={() => {
+							document.getElementById("price")?.scrollIntoView({
+								behavior: "smooth",
+								block: "center",
+							})
+						}}
+					>
+						<FaDollarSign className="size-6" />
 
 						<span>
-							Få en rundvisning
+							Få et prisestimat
 						</span>
 					</button>
 
-					<button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white inline-flex gap-4 items-center rounded-full mx-4">
+					<Link
+						className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white inline-flex gap-4 items-center rounded-full mx-4"
+						href={"mailto:madsbechmortensen@hotmail.dk"}
+						target="_blank"
+					>
 						<MdOutlineChecklist className="size-6" />
 
 						<span className="text-left text-xs text-gray-200">
@@ -88,7 +101,7 @@ export default function Home() {
 							<br />
 							<span className="text-base text-white font-semibold">Tag kontakt</span>
 						</span>
-					</button>
+					</Link>
 				</div>
 			</section>
 
@@ -183,7 +196,11 @@ export default function Home() {
 					tilpasset til dit problem
 				</h2>
 				<ul className="mt-12 grid grid-cols-12 w-full gap-16 max-w-[1400px] px-20 mx-auto">
-					<button className="text-start col-span-7 border-4 border-gray-300 rounded-3xl p-8 group relative overflow-hidden">
+					<Link
+						className="text-start col-span-7 border-4 border-gray-300 rounded-3xl p-8 group relative overflow-hidden"
+						href={"mailto:madsbechmortensen@hotmail.dk"}
+						target="_blank"
+					>
 						<span className="uppercase font-bold text-blue-700">
 							Hjemmesider/Web-Apps
 						</span>
@@ -207,9 +224,13 @@ export default function Home() {
 						<MdOutlineDesktopMac
 							className="absolute -bottom-5 -left-4 size-[450px] text-gray-300 rotate-[45deg] -translate-x-[70px] translate-y-[70px] -z-10"
 						/>
-					</button>
+					</Link>
 
-					<button className="text-start col-span-5 bg-blue-600 rounded-3xl h-fit p-8 group">
+					<Link
+						className="text-start col-span-5 bg-blue-600 rounded-3xl h-fit p-8 group"
+						href={"mailto:madsbechmortensen@hotmail.dk"}
+						target="_blank"
+					>
 						<span className="uppercase font-bold text-gray-300">
 							MOBIL APPLIKATIONER
 						</span>
@@ -229,7 +250,7 @@ export default function Home() {
 						>
 							<FaAngleRight className="size-5 text-white group-hover:text-blue-600" />
 						</div>
-					</button>
+					</Link>
 				</ul>
 			</section>
 
@@ -245,10 +266,16 @@ export default function Home() {
 					<Estimator />
 				</div>
 
+				<div id="price" />
+
 				<div className="mx-auto my-28 w-fit">
-					<button className="mx-4 px-8 py-4 bg-blue-600 hover:bg-blue-700 inline-flex gap-4 items-center rounded-full">
+					<Link
+						className="mx-4 px-8 py-4 bg-blue-600 hover:bg-blue-700 inline-flex gap-4 items-center rounded-full"
+						href={"mailto:madsbechmortensen@hotmail.dk"}
+						target="_blank"
+					>
 						<span className="text-lg text-white">Tag Kontakt</span>
-					</button>
+					</Link>
 				</div>
 			</section>
 		</main>
