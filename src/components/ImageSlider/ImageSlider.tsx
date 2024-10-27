@@ -86,11 +86,11 @@ const ImageSlider = forwardRef(function ImageSlider(props: {selected: number} & 
     return (
         <div className={"w-full overflow-x-clip flex justify-center"}>
             <div
-                className={`w-[70vw] inline-flex shrink-0 ${className}`}
+                className={`w-[70vw] flex flex-row shrink-0 ${className}`}
                 ref={ref}
                 style={{
                     ...style,
-                    gap: "4%",
+                    gap: "max(4%,32px)",
                     translate: `${selected*(-100-4)}% 0`
                 }}
                 {...rest}

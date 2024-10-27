@@ -68,14 +68,14 @@ export default function Estimator() {
 	}, []);
 
 	return (
-		<div className="mt-6 h-52">
-			<div className="flex flex-row mx-auto w-fit">
+		<div className="mt-6 h-auto sm:h-60">
+			<div className="flex flex-row mx-auto w-screen max-w-[430px] px-4">
 				{questions.map(({ Icon }, i) => {
 					const hasCompleted = i <= question;
 
 					return (
-						<div key={i} className="inline-flex items-center">
-							{i !== 0 && <div className={`w-12 h-[5px] ${hasCompleted ? "bg-blue-600" : "bg-gray-300"}`} />}
+						<div key={i} className={`inline-flex items-center ${i !== 0 && "basis-0 grow"}`}>
+							{i !== 0 && <div className={`w-full h-[5px] ${hasCompleted ? "bg-blue-600" : "bg-gray-300"}`} />}
 
 							<div className={`p-1 rounded-full ${hasCompleted ? "border-blue-600" : "border-gray-300"} border-2`}>
 								<Icon className={`size-[1.1rem] ${hasCompleted ? "text-blue-600" : "text-gray-800"}`} />
@@ -85,7 +85,7 @@ export default function Estimator() {
 				})}
 			</div>
 			
-			<div className="flex flex-col items-center border pt-10 pb-14 mt-4 rounded-lg w-screen max-w-[675px] relative">
+			<div className="flex flex-col items-center border pt-10 pb-14 mt-4 rounded-lg mx-4 p-4 md:mx-0 md:w-screen max-w-[675px] relative">
 				<CurrentQuestion state={state} updateState={updateState} />
 
 				{question > 0 && (

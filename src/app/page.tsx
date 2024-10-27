@@ -12,7 +12,7 @@ import { BsGithub, BsLaptopFill, BsSpeedometer2 } from "react-icons/bs";
 import { CiCircleList, CiGlobe } from "react-icons/ci";
 import { FaAngleLeft, FaAngleRight, FaCodeBranch, FaDollarSign, FaKey, FaLaptopCode, FaLinkedinIn, FaPlus, FaRegSun } from "react-icons/fa6";
 import { GrStreetView } from "react-icons/gr";
-import { IoCodeSlash, IoMailUnreadOutline } from "react-icons/io5";
+import { IoCodeSlash, IoLockClosedOutline, IoMailUnreadOutline } from "react-icons/io5";
 import { LuKeyRound, LuServerCrash } from "react-icons/lu";
 import { MdDesktopMac, MdOutlineChecklist, MdOutlineDesktopMac, MdOutlineNewReleases, MdScreenshotMonitor } from "react-icons/md";
 import { PiGithubLogoLight, PiLaptopDuotone } from "react-icons/pi";
@@ -60,21 +60,26 @@ export default function Home() {
 				</h3>
 
 				<h1
-					className="text-5xl font-bold text-center leading-[4rem]"
+					className="text-5xl font-bold text-center leading-[4rem] max-md:px-4"
 					aria-label="Administrationsværktøjet skabt til at være hurtigt, sikkert, ligetil, dit eget."
 				>
-					Hjemmesider skabte
-					<br />
-					<span className="inline-flex items-center gap-3">
+					Hjemmesider skabt
+					<br className="max-md:hidden" />
+					<span className="inline-flex items-center gap-3 max-md:hidden">
 						til at være{" "}
 
 						<ChipAnimation />
 					</span>
+
+					<span className="md:hidden">
+						{" "}til at være{" "}
+						<span className="text-blue-600 underline underline-offset-[6px]">troværdige</span>
+					</span>
 				</h1>
 
-				<div className="mt-10">
+				<div className="mt-10 flex max-sm:flex-col gap-4">
 					<button
-						className="p-5 bg-blue-600/20 hover:bg-blue-600/35 inline-flex gap-3 items-center rounded-full mx-4"
+						className="p-5 bg-blue-600/20 hover:bg-blue-600/35 inline-flex gap-3 items-center rounded-full"
 						onClick={() => {
 							document.getElementById("price")?.scrollIntoView({
 								behavior: "smooth",
@@ -90,7 +95,7 @@ export default function Home() {
 					</button>
 
 					<Link
-						className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white inline-flex gap-4 items-center rounded-full mx-4"
+						className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white inline-flex gap-4 items-center rounded-full"
 						href={"mailto:madsbechmortensen@hotmail.dk"}
 						target="_blank"
 					>
@@ -106,10 +111,16 @@ export default function Home() {
 			</section>
 
 			<section id="showcase" className="flex flex-col items-center">
-				<div className="flex flex-col items-center w-full shrink-0">
+				<div className="w-full bg-blue-600 py-12 sm:hidden">
+					<h3 className="uppercase text-white text-xl font-semibold text-center">
+						6+ års erfaring
+					</h3>
+				</div>
+
+				<div className="flex flex-col items-center w-full shrink-0 max-sm:hidden">
 					<ImageSlider
 						selected={selected}
-						className="lg:gap-[4%] 2xl:gap-[8%] w-[67vw] transition-all duration-500 ease-in-out"
+						className="gap-8 lg:gap-[4%] 2xl:gap-[8%] max-w-[1500px] flex-col max-lg:p-4 lg:flex-row w-full lg:w-[67vw] transition-all duration-500 ease-in-out"
 					>
 						<SliderElement
 							title={"produkt lavet til kunde"}
@@ -148,7 +159,7 @@ export default function Home() {
 						/>
 					</ImageSlider>
 
-					<div className="mt-6">
+					<div className="mt-6 max-lg:hidden">
 						<button
 							className={`p-6 bg-blue-700/20 hover:bg-blue-700/40 transition-all rounded-full mx-3 ${selected === 0 && "opacity-50 hover:bg-blue-700/20"}`}
 							onClick={() => selected !== 0 && setSelected((prev) => prev - 1)}
@@ -168,14 +179,14 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section id="about" className="pt-28 flex flex-col items-center">
+			<section id="about" className="pt-20 sm:pt-28 flex flex-col items-center">
 				<h2
-					className="text-5xl font-semibold text-center leading-[4rem]"
+					className="text-5xl font-semibold text-center leading-[4rem] max-lg:px-4"
 					aria-label="En hurtigere måde at gøre tingene på."
 				>
-					<span className="inline-flex items-center gap-3">
+					<span className="inline-flex items-center gap-3 max-sm:hidden">
 						Få en
-						<span className="overflow-hidden p-2 inline-flex items-center rounded-full transition-all duration-300 w-min" style={{
+						<span className="max-sm:hidden overflow-hidden p-2 inline-flex items-center rounded-full transition-all duration-300 w-min" style={{
 							backgroundColor: "#146eff" + (75).toString(16),
 						}}>
 							<Chip
@@ -192,12 +203,17 @@ export default function Home() {
 							/>
 						</span>
 					</span>
-					<br />
+					<br className="max-sm:hidden" />
+					<span className="sm:hidden">
+						Få en{" "}
+						<span className="text-blue-600 underline underline-offset-[6px]">løsning</span>
+						{" "}
+					</span>
 					tilpasset til dit problem
 				</h2>
-				<ul className="mt-12 grid grid-cols-12 w-full gap-16 max-w-[1400px] px-20 mx-auto">
+				<ul className="mt-12 grid lg:grid-cols-12 w-full gap-8 md:gap-16 max-w-[1400px] px-2 sm:px-8 md:px-20 md:mx-auto">
 					<Link
-						className="text-start col-span-7 border-4 border-gray-300 rounded-3xl p-8 group relative overflow-hidden"
+						className="text-start col-span-7 border-4 border-gray-300 rounded-3xl p-8 group relative overflow-hidden h-fit"
 						href={"mailto:madsbechmortensen@hotmail.dk"}
 						target="_blank"
 					>
@@ -216,7 +232,7 @@ export default function Home() {
 						</p>
 
 						<div
-							className={`mt-24 p-5 border-2 border-blue-600 group-hover:scale-110 group-hover:bg-blue-600 transition-all duration-300 rounded-full float-right`}
+							className={`sm:mt-24 p-5 border-2 border-blue-600 group-hover:scale-110 group-hover:bg-blue-600 transition-all duration-300 rounded-full float-right`}
 						>
 							<FaAngleRight className="text-blue-600 size-5 group-hover:text-white" />
 						</div>
@@ -227,7 +243,7 @@ export default function Home() {
 					</Link>
 
 					<Link
-						className="text-start col-span-5 bg-blue-600 rounded-3xl h-fit p-8 group"
+						className="text-start col-span-7 lg:col-span-5 bg-blue-600 rounded-3xl h-fit p-8 group"
 						href={"mailto:madsbechmortensen@hotmail.dk"}
 						target="_blank"
 					>
@@ -268,7 +284,7 @@ export default function Home() {
 
 				<div id="price" />
 
-				<div className="mx-auto my-28 w-fit">
+				<div className="mx-auto mt-10 mb-20 sm:my-28 w-fit">
 					<Link
 						className="mx-4 px-8 py-4 bg-blue-600 hover:bg-blue-700 inline-flex gap-4 items-center rounded-full"
 						href={"mailto:madsbechmortensen@hotmail.dk"}

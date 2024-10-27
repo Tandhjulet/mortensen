@@ -7,9 +7,9 @@ export interface QSpecial extends State {
 export default function Question2({ updateState }: QuestionProps) {
 	return (
 		<>
-			<h1 className="text-xl font-semibold px-6">Skal du bruge specialfunktioner?</h1>
-			<span className="mb-4 font-thin text-center">
-				Foreksempel Log-ind (RBAC/AC), Blog, Forum, eller<br />
+			<h1 className="text-center text-xl font-semibold sm:px-6">Skal du bruge specialfunktioner?</h1>
+			<span className="mb-4 font-thin text-center sm:px-16">
+				Foreksempel Log-ind (RBAC/AC), Blog, Forum, eller
 				noget helt tredje.
 			</span>
 

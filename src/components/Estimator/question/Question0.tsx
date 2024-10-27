@@ -7,8 +7,8 @@ export interface QPurpose extends State {
 export default function Question0({ updateState }: QuestionProps) {
 	return (
 		<>
-			<h1 className="text-xl font-semibold">Hvad er formålet med hjemmesiden?</h1>
-			<span className="mb-4 font-thin">Vælg det, som bedst beskriver produktets endemål.</span>
+			<h1 className="text-center text-xl font-semibold">Hvad er formålet med hjemmesiden?</h1>
+			<span className="mb-4 font-thin text-center">Vælg det, som bedst beskriver produktets endemål.</span>
 
 			<button
 				className="bg-blue-600 text-white px-4 py-2 rounded-xl my-1 text-lg"

@@ -13,28 +13,10 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+	  screens: {
+		'phone': '600px'
+	  }
     },
   },
-  plugins: [
-    plugin(function({ addUtilities, matchUtilities, theme }: any) {
-      addUtilities({
-        '.backface-visible': {
-          'backface-visibility': 'visible',
-        },
-        '.backface-hidden': {
-          'backface-visibility': 'hidden',
-        }
-      }),
-      matchUtilities(
-        {
-          'translate-z': (value: any) => ({
-            '--tw-translate-z': value,
-            transform: ` translate3d(var(--tw-translate-x), var(--tw-translate-y), var(--tw-translate-z)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))`,
-          }), // this is actual CSS
-        },
-        { values: theme('translate'), supportsNegativeValues: true }
-      )
-    })
-  ],
 };
 export default config;

@@ -7,9 +7,10 @@ export interface QDesign extends State {
 export default function Question3({ updateState }: QuestionProps) {
 	return (
 		<>
-			<h1 className="text-xl font-semibold px-6">Ønsker du hjælp til at designe logo eller hjemmeside?</h1>
-			<span className="mb-4 font-thin text-center">
-				Hvis du ikke har et design klar på forhånd, vil vi<br />gerne hjælpe dig med at lave et.
+			<h1 className="text-center text-xl font-semibold sm:px-6">Ønsker du hjælp til at designe logo eller hjemmeside?</h1>
+			<span className="mb-4 font-thin text-center sm:px-16">
+				Hvis du ikke har et design klar på forhånd, vil vi
+				gerne hjælpe dig med at lave et.
 			</span>
 
 			<button

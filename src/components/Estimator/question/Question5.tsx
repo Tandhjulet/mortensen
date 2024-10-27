@@ -41,7 +41,7 @@ export default function Question5(props: QuestionProps) {
 	}, []);
 
 	return (
-		<div className="grid grid-cols-2 mb-5">
+		<div className="grid grid-cols-1 max-sm:gap-6 sm:grid-cols-2 mb-5">
 			<div className="text-start grid grid-cols-[5fr_3fr] w-full">
 				{summary.map(([summary, price], i) => (
 					<Fragment key={i}>
@@ -51,13 +51,17 @@ export default function Question5(props: QuestionProps) {
 				))}
 			</div>
 
-			<div className="text-center my-auto">
+			<div className="my-auto text-center">
 				<h1 className="px-6 text-lg">Dit prisestimat bliver:</h1>
-				<span className="underline underline-offset-[6px] text-3xl mb-4 text-center font-black text-gray-800">
+				<span className="underline underline-offset-[6px] text-3xl mb-4 font-black text-gray-800">
 					{total.toLocaleString("da-DK", {
 						style: "currency",
 						currency: "DKK"
 					})}
+				</span>
+				<br />
+				<span className="mt-1 block text-sm text-gray-700">
+					(+ moms)
 				</span>
 			</div>
 		</div>

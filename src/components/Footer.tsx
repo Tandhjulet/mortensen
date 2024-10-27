@@ -5,9 +5,9 @@ import { PiGithubLogoLight } from "react-icons/pi";
 
 export default function Footer() {
     return (
-        <footer className="max-w-[1200px] mx-auto pb-16">
+        <footer className="max-w-[1200px] mx-auto pb-16 px-4">
             <div className="border-t border-gray-300 my-6" />
-            <div className="inline-flex justify-between w-full">
+            <div className="inline-flex justify-between w-full px-4">
                 <div className="flex flex-col gap-2 font-normal text-nowrap">
                     <a href="/" className="text-gray-800 text-sm w-fit">
 						Mads Bech
@@ -20,7 +20,10 @@ export default function Footer() {
                     <div className="grow" />
 
                     <span className="mt-2 text-gray-900 text-sm">
-						&copy; 2024 - Alle rettigheder forbeholdes.
+						&copy; 2024
+						<br className="sm:hidden" />
+						<span className="max-sm:hidden">{" - "}</span>
+						Alle rettigheder forbeholdes.
 					</span>
                 </div>
 

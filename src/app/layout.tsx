@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${inter.className} scroll-smooth`}>
+			<body className={`${inter.className} scroll-smooth overflow-x-hidden`}>
 				{children}
 
 				<Footer />

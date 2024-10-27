@@ -7,13 +7,13 @@ export interface QReadyBy extends State {
 export default function Question4({ updateState }: QuestionProps) {
 	return (
 		<>
-			<h1 className="text-xl font-semibold px-6">Hvornår skal hjemmesiden være klar?</h1>
-			<span className="mb-4 font-thin text-center">
-				Vælg den mulighed, der bedst passer med din formodning af,<br />
+			<h1 className="text-center text-xl font-semibold px-6">Hvornår skal hjemmesiden være klar?</h1>
+			<span className="mb-4 font-thin text-center sm:px-16">
+				Vælg den mulighed, der bedst passer med din formodning af,
 				hvornår hjemmesiden skal være klar til brug.
 			</span>
 
-			<div className="grid grid-cols-3 gap-4 px-6">
+			<div className="grid grid-cols-3 gap-2 sm:gap-4 sm:px-6">
 				<button
 					className="bg-blue-600 text-white px-4 py-2 rounded-xl my-1 text-lg"
 					onClick={() => updateState({readyBy: "Hurtigst muligt"} as QReadyBy)}
