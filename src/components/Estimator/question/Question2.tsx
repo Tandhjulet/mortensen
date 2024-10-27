@@ -1,6 +1,6 @@
 import { QuestionProps, State } from "../Estimator";
 
-interface QSpecial extends State {
+export interface QSpecial extends State {
 	specialFunctionality: boolean;
 }
 

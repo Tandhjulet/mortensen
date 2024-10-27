@@ -1,6 +1,6 @@
 import { QuestionProps, State } from "../Estimator";
 
-interface QPurpose extends State {
+export interface QPurpose extends State {
 	purpose: "Digitalt visitkort" | "Indgå i større projekt";
 }
 

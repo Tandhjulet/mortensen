@@ -1,6 +1,6 @@
 import { QuestionProps, State } from "../Estimator";
 
-interface QReadyBy extends State {
+export interface QReadyBy extends State {
 	readyBy: "Hurtigst muligt" | "2-4 uger" | "4 uger+";
 }
 

@@ -246,22 +246,8 @@ export default function Home() {
 				</div>
 
 				<div className="mx-auto my-28 w-fit">
-					<button className="mx-4 p-5 bg-blue-600/20 hover:bg-blue-600/35 inline-flex gap-3 items-center rounded-full">
-						<GrStreetView className="size-6" />
-
-						<span>
-							Få en rundvisning
-						</span>
-					</button>
-
-					<button className="mx-4 px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white inline-flex gap-4 items-center rounded-full">
-						<MdOutlineChecklist className="size-6" />
-
-						<span className="text-left text-xs text-gray-200">
-							Få drømme-siden
-							<br />
-							<span className="text-base text-white font-semibold">Tag kontakt</span>
-						</span>
+					<button className="mx-4 px-8 py-4 bg-blue-600 hover:bg-blue-700 inline-flex gap-4 items-center rounded-full">
+						<span className="text-lg text-white">Tag Kontakt</span>
 					</button>
 				</div>
 			</section>
