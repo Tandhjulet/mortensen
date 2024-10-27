@@ -3,19 +3,15 @@
 import ChipAnimation, { Chip } from "@/components/ChipAnimation/ChipAnimation";
 import Estimator from "@/components/Estimator/Estimator";
 import ImageSlider, { SliderElement } from "@/components/ImageSlider/ImageSlider";
-import { motion, MotionProps, useInView, useReducedMotion } from "framer-motion";
-import Image from "next/image";
+import { useInView, useReducedMotion } from "framer-motion";
 import Link from "next/link";
-import { createRef, HTMLAttributes, memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { BiDownload } from "react-icons/bi";
-import { BsGithub, BsLaptopFill, BsSpeedometer2 } from "react-icons/bs";
-import { CiCircleList, CiGlobe } from "react-icons/ci";
-import { FaAngleLeft, FaAngleRight, FaCodeBranch, FaDollarSign, FaKey, FaLaptopCode, FaLinkedinIn, FaPlus, FaRegSun } from "react-icons/fa6";
-import { GrStreetView } from "react-icons/gr";
-import { IoCodeSlash, IoLockClosedOutline, IoMailUnreadOutline } from "react-icons/io5";
-import { LuKeyRound, LuServerCrash } from "react-icons/lu";
-import { MdDesktopMac, MdOutlineChecklist, MdOutlineDesktopMac, MdOutlineNewReleases, MdScreenshotMonitor } from "react-icons/md";
-import { PiGithubLogoLight, PiLaptopDuotone } from "react-icons/pi";
+import { useRef, useState } from "react";
+import { CiGlobe } from "react-icons/ci";
+import { FaAngleLeft, FaAngleRight, FaDollarSign, FaLinkedinIn } from "react-icons/fa6";
+import { IoMailUnreadOutline } from "react-icons/io5";
+import { LuKeyRound } from "react-icons/lu";
+import { MdOutlineChecklist, MdOutlineDesktopMac } from "react-icons/md";
+import { PiGithubLogoLight } from "react-icons/pi";
 
 export default function Home() {
 	const fasterRef = useRef(null);
