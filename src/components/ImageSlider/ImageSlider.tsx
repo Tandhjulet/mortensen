@@ -38,7 +38,7 @@ export const SliderElement = (props: ElementProps) => {
 					alt="Admin panel"
 					priority
 					
-					className="group-hover:blur-sm transition-all duration-300"
+					className="group-hover:blur-sm group-hover:grayscale transition-all duration-300"
 				/>
 
 				<div className="transition-all duration-200 opacity-0 items-center justify-center absolute top-0 left-0 w-full h-full flex gap-4 group-hover:opacity-100">
@@ -66,7 +66,7 @@ export const SliderElement = (props: ElementProps) => {
 				</span>
 			</div>
 
-			<p className="pt-2 text-sm text-gray-700 max-w-[80%]">
+			<p className="pt-2 text-sm text-gray-700 px-8 text-center">
 				{props.description}
 			</p>
 		</div>
