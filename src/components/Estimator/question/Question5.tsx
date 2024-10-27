@@ -42,13 +42,15 @@ export default function Question5(props: QuestionProps) {
 
 	return (
 		<div className="grid grid-cols-1 max-sm:gap-6 sm:grid-cols-2 mb-5">
-			<div className="text-start grid grid-cols-[5fr_3fr] w-full">
-				{summary.map(([summary, price], i) => (
-					<Fragment key={i}>
-						<span className="text-sm line-clamp-1">{summary}</span>
-						<span className="line-clamp-1 text-blue-700 text-end">+{price}</span>
-					</Fragment>
-				))}
+			<div>
+				<div className="text-start grid grid-cols-[5fr_3fr] w-full">
+					{summary.map(([summary, price], i) => (
+						<Fragment key={i}>
+							<span className="text-sm line-clamp-1">{summary}</span>
+							<span className="line-clamp-1 text-blue-700 text-end">+{price}</span>
+						</Fragment>
+					))}
+				</div>
 			</div>
 
 			<div className="my-auto text-center">
