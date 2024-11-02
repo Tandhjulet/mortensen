@@ -31,25 +31,25 @@ interface ChipProps {
 const chips: Chip[] = [{
     icon: BsSpeedometer2,
     text: "hurtige",
-    textWidth: 285,
+    textWidth: 277,
     color: "#146eff",
     indexOfNext: 1,
 }, {
     icon: IoLockClosedOutline,
     text: "troværdige",
-    textWidth: 385,
+    textWidth: 360,
     color: "#146eff",
     indexOfNext: 2,
 }, {
     icon: BsGrid1X2,
     text: "intuitive",
-    textWidth: 305,
+    textWidth: 295,
     color: "#146eff",
     indexOfNext: 3,
 }, {
     icon: LuHeartHandshake,
     text: "dine\u00A0egne",
-    textWidth: 360,
+    textWidth: 335,
     color: "#146eff",
     indexOfNext: 0,
 }]
