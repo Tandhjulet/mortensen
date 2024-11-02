@@ -1,11 +1,10 @@
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@remix-run/react";
 import React, { createRef, forwardRef, HTMLAttributes, PropsWithChildren, ReactNode, useEffect } from "react";
 import { IconBaseProps } from "react-icons";
 
 interface ElementRedirect {
 	href: string,
+	label: string,
 	icon: React.FC<IconBaseProps>
 }
 
@@ -31,12 +30,11 @@ export const SliderElement = (props: ElementProps) => {
 			}}
 		>
 			<div className={`overflow-hidden rounded-md group ${props.dark ? "bg-black" : "bg-white border"}`}>
-				<Image
+				<img
 					src={props.backgroundUrl}
 					width={1901}
 					height={957}
 					alt="Admin panel"
-					priority
 					
 					className="group-hover:blur-sm group-hover:grayscale transition-all duration-300"
 				/>
@@ -45,10 +43,10 @@ export const SliderElement = (props: ElementProps) => {
 					{props.redirects.map((redirect, i) => (
 						<Link
 							key={i}
-							href={redirect.href}
+							to={redirect.href}
 							target="_blank"
-
 							className={`border border-blue-600 rounded-full p-2 ${props.dark ? "bg-blue-900/25 hover:bg-blue-900/45" : "bg-blue-300/35 hover:bg-blue-300/55"}`}
+							aria-label={redirect.label}
 						>
 							<redirect.icon className="size-8 text-blue-600" />
 						</Link>

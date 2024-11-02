@@ -1,17 +1,31 @@
 "use client";
 
-import ChipAnimation, { Chip } from "@/components/ChipAnimation/ChipAnimation";
-import Estimator from "@/components/Estimator/Estimator";
-import ImageSlider, { SliderElement } from "@/components/ImageSlider/ImageSlider";
+import { Link, MetaFunction } from "@remix-run/react";
 import { useInView, useReducedMotion } from "framer-motion";
-import Link from "next/link";
 import { useRef, useState } from "react";
-import { CiGlobe } from "react-icons/ci";
 import { FaAngleLeft, FaAngleRight, FaDollarSign, FaLinkedinIn } from "react-icons/fa6";
 import { IoMailUnreadOutline } from "react-icons/io5";
-import { LuKeyRound } from "react-icons/lu";
-import { MdOutlineChecklist, MdOutlineDesktopMac } from "react-icons/md";
 import { PiGithubLogoLight } from "react-icons/pi";
+import ChipAnimation, { Chip } from "../components/ChipAnimation/ChipAnimation";
+import { MdOutlineChecklist, MdOutlineDesktopMac } from "react-icons/md";
+import { CiGlobe } from "react-icons/ci";
+import { LuKeyRound } from "react-icons/lu";
+import ImageSlider, { SliderElement } from "../components/ImageSlider/ImageSlider";
+import Estimator from "../components/Estimator/Estimator";
+
+export const meta: MetaFunction = () => {
+	return [
+		{ title: "Mortensen | Webudvikling" },
+		{
+			name: "description",
+			content: "Mortensen er et webudviklingsbureau i Randers. Vi leverer hjemmesider i høj kvalitet, til lave priser.",
+		},
+		{
+			name: "og:title",
+			content: "Dansk webudvikling hos Mortensen",
+		}
+	]
+}
 
 export default function Home() {
 	const fasterRef = useRef(null);
@@ -27,24 +41,27 @@ export default function Home() {
 				<div className="inline-flex mb-6 gap-4">
 					<Link
 						className="bg-gray-100 hover:text-blue-600 rounded-full p-2"
-						href="https://www.linkedin.com/in/mads-bech-mortensen-755830319/"
+						to="https://www.linkedin.com/in/mads-bech-mortensen-755830319/"
 						target="_blank"
+						aria-label="LinkedIn"
 					>
 						<FaLinkedinIn className="size-6" />
 					</Link>
 
 					<Link
 						className="bg-gray-100 hover:text-blue-600 rounded-full p-2"
-						href="https://github.com/Tandhjulet"
+						to="https://github.com/Tandhjulet"
 						target="_blank"
+						aria-label="GitHub"
 					>
 						<PiGithubLogoLight className="size-6" />
 					</Link>
 
 					<Link
 						className="bg-gray-100 hover:text-blue-600 rounded-full p-2"
-						href={"mailto:madsbechmortensen@hotmail.dk"}
+						to={"mailto:madsbechmortensen@hotmail.dk"}
 						target="_blank"
+						aria-label="E-Mail"
 					>
 						<IoMailUnreadOutline className="size-6" />
 					</Link>
@@ -92,7 +109,7 @@ export default function Home() {
 
 					<Link
 						className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white inline-flex gap-4 items-center rounded-full"
-						href={"mailto:madsbechmortensen@hotmail.dk"}
+						to={"mailto:madsbechmortensen@hotmail.dk"}
 						target="_blank"
 					>
 						<MdOutlineChecklist className="size-6" />
@@ -122,10 +139,12 @@ export default function Home() {
 							title={"produkt lavet til kunde"}
 							redirects={[{
 								href: "https://github.com/Tandhjulet/dashmc",
-								icon: PiGithubLogoLight
+								icon: PiGithubLogoLight,
+								label: "GitHub",
 							}, {
 								href: "https://dashmc.net/",
-								icon: CiGlobe
+								icon: CiGlobe,
+								label: "Website"
 							}]}
 							backgroundUrl="/dashmc-light.png"
 							description="Ansøgningspanel for spil-serveren DashMC. Panelet giver mulighed for nemt at konfigurere alle ansøgningerne, gennem et
@@ -142,7 +161,8 @@ export default function Home() {
 							title={"app til gymnasieelever"}
 							redirects={[{
 								href: "https://lectimate.com/",
-								icon: CiGlobe
+								icon: CiGlobe,
+								label: "Website",
 							}]}
 							backgroundUrl="/lectimate.png"
 							description="Forsiden for hjemmesiden til skole-appen Lectimate. I appen kan man se sit skema, fraværsprocent, id-kort, og langt mere. Den har indtil videre
@@ -210,7 +230,7 @@ export default function Home() {
 				<ul className="mt-12 grid lg:grid-cols-12 w-full gap-8 md:gap-16 max-w-[1400px] px-2 sm:px-8 md:px-20 md:mx-auto">
 					<Link
 						className="text-start col-span-7 border-4 border-gray-300 rounded-3xl p-8 group relative overflow-hidden h-fit"
-						href={"mailto:madsbechmortensen@hotmail.dk"}
+						to={"mailto:madsbechmortensen@hotmail.dk"}
 						target="_blank"
 					>
 						<span className="uppercase font-bold text-blue-700">
@@ -240,7 +260,7 @@ export default function Home() {
 
 					<Link
 						className="text-start col-span-7 lg:col-span-5 bg-blue-600 rounded-3xl h-fit p-8 group"
-						href={"mailto:madsbechmortensen@hotmail.dk"}
+						to={"mailto:madsbechmortensen@hotmail.dk"}
 						target="_blank"
 					>
 						<span className="uppercase font-bold text-gray-300">
@@ -283,7 +303,7 @@ export default function Home() {
 				<div className="mx-auto mt-10 mb-20 sm:my-28 w-fit">
 					<Link
 						className="mx-4 px-8 py-4 bg-blue-600 hover:bg-blue-700 inline-flex gap-4 items-center rounded-full"
-						href={"mailto:madsbechmortensen@hotmail.dk"}
+						to={"mailto:madsbechmortensen@hotmail.dk"}
 						target="_blank"
 					>
 						<span className="text-lg text-white">Tag Kontakt</span>
