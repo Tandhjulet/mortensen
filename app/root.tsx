@@ -34,7 +34,7 @@ export default function App() {
 
 				<link
 					rel="canonical"
-					href="https://mortensen.dk"
+					href="https://madsbechmortensen.dk"
 				/>
 
 				<Meta />
