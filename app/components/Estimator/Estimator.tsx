@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useCallback, useMemo, useState } from "react";
-import Question0, { QPurpose } from "./question/Question0";
 import Question1, { QPages } from "./question/Question1";
 import { IconBaseProps } from "react-icons";
 import { IoArrowUndo, IoCode, IoPencilOutline, IoTimerOutline } from "react-icons/io5";
@@ -13,7 +12,7 @@ import Question3, { QDesign } from "./question/Question3";
 import Question4, { QReadyBy } from "./question/Question4";
 import Question5 from "./question/Question5";
 
-export type QAnswers = QPurpose & QPages & QSpecial & QDesign & QReadyBy;
+export type QAnswers = QPages & QSpecial & QDesign & QReadyBy;
 
 export interface QuestionProps {
 	updateState: (toInsert: State) => void;
@@ -26,9 +25,6 @@ interface Question {
 }
 
 const questions: Question[] = [{
-	page: Question0, // Hvad er formålet med hjemmesiden?
-	Icon: MdAutoMode,
-}, {
 	page: Question1, // Hvor mange undersider skal du bruge?
 	Icon: MdOutlineNewspaper,
 }, {

@@ -58,8 +58,10 @@ export default function Question5(props: QuestionProps) {
 				<span className="underline underline-offset-[6px] text-3xl mb-4 font-black text-gray-800">
 					{total.toLocaleString("da-DK", {
 						style: "currency",
-						currency: "DKK"
-					})}
+						currency: "DKK",
+						maximumFractionDigits: 0,
+						maximumSignificantDigits: 2,
+					}).replace(/\.$/, "")}
 				</span>
 				<br />
 				<span className="mt-1 block text-sm text-gray-700">
