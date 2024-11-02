@@ -11,6 +11,11 @@ import Footer from "./components/Footer";
 
 export const links: LinksFunction = () => [
 	{ rel: "stylesheet", href: tailwind },
+	{ 
+		rel: "icon",
+		href: "/favicon.ico",
+		type: "image/x-icon"
+	},
 ];
 
 export default function App() {
@@ -26,11 +31,6 @@ export default function App() {
 				<link rel="preconnect" href="https://fonts.googleapis.com" />
 				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 				<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet"></link>
-
-				<link
-					rel="icon"
-					href="data:image/x-icon;base64,AA"
-				/>
 
 				<link
 					rel="canonical"

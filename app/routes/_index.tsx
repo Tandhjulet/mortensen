@@ -12,6 +12,22 @@ import { CiGlobe } from "react-icons/ci";
 import { LuKeyRound } from "react-icons/lu";
 import ImageSlider, { SliderElement } from "../components/ImageSlider/ImageSlider";
 import Estimator from "../components/Estimator/Estimator";
+import { LinksFunction } from "@remix-run/node";
+
+export const links: LinksFunction = () => {
+	return [
+		{
+			rel: "preload",
+			href: "/dashmc-light.png",
+			as: "image",
+		},
+		{
+			rel: "preload",
+			href: "/lectimate.png",
+			as: "image",
+		}
+	]
+}
 
 export const meta: MetaFunction = () => {
 	return [
